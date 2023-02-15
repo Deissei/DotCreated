@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+	{% block content %}
+
+	<!-- Unyson messages modal -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+		<div class="fw-messages-wrap ls p-normal">
+		</div>
+	</div>
+	<!-- eof .modal -->
+
+	<!-- wrappers for visual page editor and boxed version of template -->
+	<div id="canvas">
+		<div id="box_wrapper">
+
+			{% include 'base/header.html' %}
+
+			{% include 'homepage/block1.html' %}
+			{% include 'homepage/block2.html' %}
+			{% include 'homepage/block3.html' %}
+			{% include 'homepage/block4.html' %}
+			{% include 'homepage/block5.html' %}
+			{% include 'homepage/block6.html' %}
+			{% include 'homepage/block7.html' %}
+			{% include 'homepage/block8.html' %}
+			{% include 'homepage/block9.html' %}
+			{% include 'homepage/block10.html' %}
+			{% include 'homepage/block11.html' %}		
+
+			{% include 'base/footer.html' %}
+
+
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+
+	{% endblock content %}

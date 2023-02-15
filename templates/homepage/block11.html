@@ -1,0 +1,63 @@
+<section class="s-pt-50 s-pb-100 s-pt-lg-30 s-pb-lg-75 ls ms teaser-contact-icon main-icon s-parallax" id="contact">
+				<div class="corner corner-inverse"></div>
+				<div class="text-center img-wrap col-md-12">
+					<img src="img/dark_line_short.png" alt="">
+				</div>
+				<div class="container">
+					<div class="divider-10 d-none d-xl-block"></div>
+					<div class="row c-mb-50 c-mb-lg-0">
+                        {% for con in contact %}
+
+						<div class="col-lg-4 text-center">
+							<div class="border-icon">
+								<div class="teaser-icon">
+									<img src="{{ con.image1 }}" alt="">
+								</div>
+							</div>
+							<h6>
+								Call Us
+							</h6>
+							<p>
+								<strong>New Accounts:</strong> {{ con.phone_num }}
+								<br>
+								<strong>Support:</strong> {{ con.phone_num }}
+							</p>
+						</div>
+						<div class="col-lg-4 text-center">
+							<div class="border-icon">
+								<div class="teaser-icon">
+									<img src="{{ con.image2 }}" alt="">
+								</div>
+							</div>
+							<h6>
+								Write Us
+							</h6>
+							<p>
+								<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3e5b465f534e525b7e5b465f534e525b105d5153">{{ con.email }}</a>
+								<br> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="84e1fce5e9f4e8e1c4e1fce5e9f4e8e1aae7ebe9">{{ con.email }}</a>
+							</p>
+						</div>
+						<div class="col-lg-4 text-center">
+							<div class="border-icon">
+								<div class="teaser-icon">
+									<img src="{{ con.image3 }}" alt="">
+								</div>
+							</div>
+							<h6>
+								Visit Us
+							</h6>
+							<p>
+								{{ con.adres }}
+								<br> {{ con.adres }}
+							</p>
+						</div>
+
+                        {% endfor %}
+					</div>
+					<div class="divider-30 d-none d-lg-block"></div>
+					<div class="text-center img-wrap col-md-12 layout-2">
+						<img src="img/dark_line_short.png" alt="">
+					</div>
+				</div>
+				<div class="divider-10"></div>
+			</section>

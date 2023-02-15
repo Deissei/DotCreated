@@ -1,0 +1,29 @@
+<section class="ls ms blog-post-carousel">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="owl-carousel" data-responsive-lg="4" data-responsive-md="3" data-responsive-sm="2" data-responsive-xs="1" data-nav="false" data-dots="false" data-loop="true" data-margin="4">
+                    {% for rew in rewiews %}
+                    <article class="box text-center">
+                        <div class="item-content">
+                            <p class="small-text">
+                                <a href="#">{{ rew.date }}</a>
+                            </p>
+                            <h6>
+                                <a href="#">{{ rew.text }}</a>
+                            </h6>
+                            <div class="post-author">
+                                <img src="images/small_author.png" alt="">
+                                <p>
+                                    <a href="#">by {{ user.first_name }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- .item-content -->
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
