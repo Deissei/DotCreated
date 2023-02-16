@@ -1,14 +1,13 @@
 <section class="s-pt-100 s-pt-lg-130 ds process-part skew_right s-parallax top_white_line_big overflow-visible" id="steps">
     <div class="container">
         <div class="divider-65"></div>
-
-        {% for pl in plan %}
         
+        {% for pl in plan %}
         <div class="row align-items-center c-mb-20 c-mb-lg-60">
             <div class="col-12 col-lg-4">
                 <div class="step-left-part text-right">
                     <h2 class="step-title">
-                        <span class="color-main">0{{pl.id}}</span>{{pl.title}}</h2>
+                        <span class="color-main">0{{ pl.id }}</span>{{ pl.title }}</h2>
                 </div>
             </div>
             <div class="col-12 col-lg-4">
@@ -18,13 +17,77 @@
             </div>
             <div class="col-12 col-lg-4">
                 <div class="step-right-part">
-                    <p class="step-text">{{pl.description}}</p>
+                    <p class="step-text">{{ pl.description }}</p>
                 </div>
             </div>
         </div>
-
-
         {% endfor %}
+
+        {% for pl in plan2 %}
+        <div class="row align-items-center right c-mb-20 c-mb-lg-60">
+            <div class="col-12 col-lg-4  order-lg-3">
+                <div class="step-left-part">
+                    <h2 class="step-title color1">
+                        <span class="color-main2">0{{ pl.id }}</span>{{ pl.title }}</h2>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 order-lg-2">
+                <div class="step-center-part text-center">
+                    <img src="{{pl.image.url}}" alt="">
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 order-lg-1 text-right">
+                <div class="step-right-part ">
+                    <p class="step-text">{{ pl.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% for pl in plan3 %}
+        <div class="row align-items-center c-mb-20 c-mb-lg-60">
+            <div class="col-12 col-lg-4">
+                <div class="step-left-part text-right">
+                    <h2 class="step-title">
+                        <span class="color-main">03</span>{{ pl.title }}</h2>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="step-center-part text-center">
+                    <img src="{{pl.image.url}}" alt="">
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="step-right-part">
+                    <p class="step-text">{{ pl.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% for pl in plan4 %}
+        <div class="row align-items-center right c-mb-20 c-mb-lg-60">
+            <div class="col-12 col-lg-4  order-lg-3">
+                <div class="step-left-part">
+                    <h2 class="step-title color1">
+                        <span class="color-main2">04</span>{{ pl.title }}</h2>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 order-lg-2">
+                <div class="step-center-part text-center">
+                    <img src="{{pl.image.url}}" alt="">
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 order-lg-1 text-right">
+                <div class="step-right-part ">
+                    <p class="step-text">{{ pl.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+
 
         <div class="divider-10 d-block d-sm-none"></div>
         <div class="img-wrap text-center">

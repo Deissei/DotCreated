@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import AboutModels
 
-# Register your models here.
+

@@ -1,5 +1,6 @@
 from django.contrib import admin
-from project.models import Services, Employee, Contact, Rewiews, Plan, Category
+from project.models import Services, Contact, Rewiews, Plan, Category
+from apps.aboutpage.models import AboutModels
 
 class SevricesAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug":('title', )}
@@ -14,5 +15,5 @@ admin.site.register(Services, SevricesAdmin)
 admin.site.register(Plan, PlanAdmin)
 admin.site.register(Category)
 admin.site.register(Rewiews)
-admin.site.register(Employee)
 admin.site.register(Contact)
+admin.site.register(AboutModels)

@@ -1,0 +1,99 @@
+{% extends 'base/base.html' %}
+
+	{% block content %}
+
+	<!-- Unyson messages modal -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+		<div class="fw-messages-wrap ls p-normal">
+		</div>
+	</div>
+	<!-- eof .modal -->
+
+	<!-- wrappers for visual page editor and boxed version of template -->
+	<div id="canvas">
+		<div id="box_wrapper">
+
+			{% include 'base/header.html' %}
+
+
+			<section class="page_title ls s-py-50 corner-title ls invise overflow-visible">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h1>Gallery Regular</h1>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item">
+									<a href="{% url 'homepage' %}">Home</a>
+								</li>
+								<li class="breadcrumb-item">
+									<a href="#">Pages</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Gallery Regular
+								</li>
+							</ol>
+							<div class="divider-15 d-none d-xl-block"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="ls s-pt-50 s-pb-100 gallery-pagination gallery-regular">
+				<div class="d-none d-lg-block divider-20"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="row justify-content-center">
+								<div class="col-md-10 col-xl-8">
+									<div class="filters gallery-filters small-text text-lg-right">
+										{% for cat in category %}
+                            			
+										<a href="#" data-filter=".web-design">{{ cat.title }}</a>
+                            			
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+
+
+							<div class="row isotope-wrapper masonry-layout c-mb-30" data-filters=".gallery-filters">
+								
+								{% for cat in category %}
+								<div class="col-xl-4 col-sm-6 web-design design">
+
+									<div class="vertical-item item-gallery content-absolute gallery text-center ls">
+										<div class="item-media">
+											<img src="{{ cat.image.url }}" alt="">
+											<div class="media-links">
+											</div>
+										</div>
+										<div class="item-content">
+											<h6>
+												<a class="tags small-text" href="{{ cat.image.url }}">{{ cat.title }}</a>
+												<br>
+												<a href="{% url 'work' %}">{{ cat.description }}</a>
+											</h6>
+										</div>
+									</div>
+
+								</div>
+								{% endfor %}
+							
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="d-none d-lg-block divider-105"></div>
+			</section>
+
+			{% include 'base/footer.html' %}
+
+
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+
+	{% endblock content %}

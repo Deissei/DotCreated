@@ -29,9 +29,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'project.apps.ProjectConfig',
-    'apps.categories',
-    'apps.plans',
-    'apps.rewiews',
+    
+    # apps
+    'apps.aboutpage.apps.AboutpageConfig',
 ]
 
 MIDDLEWARE = [

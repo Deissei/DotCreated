@@ -1,6 +1,8 @@
 from django.apps import AppConfig
 
 
-class CategoriesConfig(AppConfig):
+class AboutpageConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.categories'
+    name = 'apps.aboutpage'
+
+    verbose_name = 'О нас'

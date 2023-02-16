@@ -9,20 +9,20 @@
             <div class="divider-40 d-none d-md-block"></div>
             <div class="col-md-12">
                 <div class="owl-carousel" data-autoplay="false" data-responsive-lg="1" data-responsive-md="1" data-responsive-sm="1" data-nav="false" data-dots="true" id="quote">
-                    {% for emp in employee %}
+                    {% for rew in rewiews1 %}
                     <div class="quote-item">
                         <div class="quote-image">
-                            <img src="{{ emp.image.url }}" alt="">
+                            <img src="{{ rew.image.url }}" alt="">
                         </div>
                         <p class="small-text author-job">
-                            {{ emp.prof }}
+                            {{ rew.prof }}
                         </p>
                         <h5>
-                            <a href="#">{{ emp.name }}</a>
+                            <a href="#">{{ rew.name }}</a>
                         </h5>
                         <p>
                             <em class="big">
-                                {{ emp.deviz }}
+                                {{ rew.deviz }}
                             </em>
                         </p>
                     </div>

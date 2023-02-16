@@ -1,0 +1,177 @@
+{% extends 'base/base.html' %}
+
+	{% block content %}
+
+	<!-- Unyson messages modal -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+		<div class="fw-messages-wrap ls p-normal">
+		</div>
+	</div>
+	<!-- eof .modal -->
+
+	<!-- wrappers for visual page editor and boxed version of template -->
+	<div id="canvas">
+		<div id="box_wrapper">
+
+			<!-- template sections -->
+
+
+			<!-- header with three Bootstrap columns - left for logo, center for navigation and right for includes-->
+			{% include 'base/header.html' %}
+
+
+			<section class="page_title ls s-py-50 corner-title ls invise overflow-visible">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h1>About</h1>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item">
+									<a href="{% url 'homepage' %}">Home</a>
+								</li>
+								<li class="breadcrumb-item">
+									<a href="#">Pages</a>
+								</li>
+								<li class="breadcrumb-item active">
+									About
+								</li>
+							</ol>
+							<div class="divider-15 d-none d-xl-block"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="s-pt-30 s-pt-lg-50 ls about">
+				<div class="divider-60 d-none d-xl-block"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 offset-md-2">
+							<div class="main-content text-center">
+								<h5>
+									"We love what we do and we love helping others succeed at what they love to do."
+								</h5>
+								<i class="rt-icon2-user"></i>
+								<p>
+									Gregory F. Parrino,
+									<span class="link-a">
+										<a href="#">CEO</a>
+									</span>
+								</p>
+
+								<div class="divider-10 d-none d-xl-block"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="s-pt-0  s-pb-30 s-pt-lg-30 s-pb-lg-75 ls about-icon teaser-contact-icon">
+				<div class="divider-10 d-none d-xl-block"></div>
+				<div class="container">
+					<div class="row c-mt-50 c-mt-lg-0">
+						{% for ab in about %}
+						
+						<div class="col-lg-4 text-center call-icon">
+							<div class="border-icon">
+								<div class="teaser-icon">
+									<img src="{{ ab.image.url }}" alt="">
+								</div>
+							</div>
+							<h6>
+								{{ ab.title }}
+							</h6>
+							<div class="icon-content">
+								<p>
+									{{ ab.desc }}
+								</p>
+							</div>
+						</div>
+
+						{% endfor %}
+
+						{% for ab in about2 %}
+
+						<div class="col-lg-4 text-center write-icon">
+							<div class="divider-30 d-none d-xl-block"></div>
+							<div class="border-icon">
+								<div class="teaser-icon">
+									<img src="{{ ab.image.url }}" alt="">
+								</div>
+							</div>
+							<div class="icon-content">
+								<h6>
+									{{ ab.title }}
+								</h6>
+								<p>
+									{{ ab.desc }}
+								</p>
+							</div>
+						</div>
+						{% endfor %}
+
+						{% for ab in about3 %}
+
+						<div class="col-lg-4 text-center visit-icon">
+							<div class="border-icon">
+								<div class="teaser-icon">
+									<img src="{{ ab.image.url }}" alt="">
+								</div>
+							</div>
+							<div class="icon-content">
+								<h6>
+									{{ ab.title }}
+								</h6>
+								<p>
+									{{ ab.desc }}
+								</p>
+							</div>
+						</div>
+
+						{% endfor %}
+
+					</div>
+				</div>
+			</section>
+
+			<section class="s-pt-20 s-pt-lg-30 gallery-carousel main-gallery container-px-0">
+				<div class="container-fluid">
+					<div class="divider-5 d-none d-xl-block"></div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="owl-carousel gallery-owl-nav" data-autoplay="false" data-responsive-lg="5" data-responsive-md="3" data-responsive-sm="3" data-responsive-xs="2" data-nav="true" data-dots="false" data-filters=".gallery-filters" data-margin="0" data-loop="true">
+								{% for cat in category %}
+								<div class="vertical-item item-gallery content-absolute text-center ds web-design">
+									<div class="item-media">
+										<img src="{{ cat.image.url }}" alt="">
+										<div class="media-links">
+			
+										</div>
+									</div>
+									<div class="item-content">
+										<h6>
+											<a class="small-text" href="gallery-regular.html">{{ cat.title }}</a>
+										</h6>
+										<h6>
+											<a href="gallery-regular.html">{{ cat.description }}</a>
+										</h6>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+							<!-- .owl-carousel-->
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{% include 'base/footer.html' %}
+
+
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+
+	{% endblock content %}

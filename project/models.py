@@ -11,18 +11,6 @@ class Services(models.Model):
 
     class Meta:
         verbose_name_plural = 'Сервисы'
-    
-class Employee(models.Model):
-    image = models.ImageField(upload_to='movie/image_user')
-    prof = models.CharField(max_length=100)
-    name = models.CharField(max_length=100)
-    deviz = models.TextField(max_length=350)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name_plural = 'Работники'
 
 class Contact(models.Model):
     name = models.CharField(max_length=40)
@@ -54,6 +42,10 @@ class Plan(models.Model):
 class Rewiews(models.Model):
     date = models.DateField()
     text = models.TextField(max_length=300)
+    image = models.ImageField(upload_to='movie/image_user', null=True)
+    prof = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    deviz = models.TextField(max_length=350, null=True)
 
     def __str__(self):
         return self.text
