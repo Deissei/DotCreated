@@ -1,0 +1,7 @@
+from django.apps import AppConfig
+
+
+class BlogpageConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'apps.blogpage'
+    verbose_name = 'Блог'

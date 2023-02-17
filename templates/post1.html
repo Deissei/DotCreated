@@ -1,0 +1,271 @@
+{% extends 'base/base.html' %}
+
+	{% block content %}
+
+	<!-- Unyson messages modal -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+		<div class="fw-messages-wrap ls p-normal">
+		</div>
+	</div>
+	<!-- eof .modal -->
+
+	<!-- wrappers for visual page editor and boxed version of template -->
+	<div id="canvas">
+		<div id="box_wrapper">
+
+			{% include 'base/header.html' %}
+
+
+			<section class="page_title ls s-py-50 corner-title ls invise overflow-visible">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h1>Post</h1>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item">
+									<a href="{% url 'homepage' %}">Home</a>
+								</li>
+								<li class="breadcrumb-item">
+									<a href="#">Pages</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Post
+								</li>
+							</ol>
+							<div class="divider-15 d-none d-xl-block"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="ls s-py-50 s-pt-lg-50 s-pb-lg-100 c-gutter-60 post1">
+				<div class="container">
+					<div class="row">
+
+						<div class="d-none d-lg-block divider-65"></div>
+
+						<main class="col-lg-7 col-xl-8 order-lg-2">
+							<article class="vertical-item post type-post status-publish format-standard has-post-thumbnail">
+
+								<!-- .post-thumbnail -->
+
+								<div class="entry-meta icons link-a small-text border-top">
+									<i class="fa fa-calendar color-main fs-14"></i>
+									<a class="url fn n" href="#">{{ blog.create_add }}</a>
+									<i class="fa fa-user color-main fs-14"></i>
+									<a class="url fn n" href="#">{{ blog.author.name }}</a>
+								</div>
+
+								<div class="item-media post-thumbnail">
+									<img src="{{ blog.image.url }}" alt="">
+								</div>
+
+
+								<div class="item-content blog-post1">
+									<div class="entry-content">
+										<h6 class="entry-title">
+											{{ blog.title }}
+										</h6>
+										<p>
+											{{ blog.desc }}
+										</p>
+										<ul class="list1">
+											<li>
+												Lorem ipsum dolor sit amet
+											</li>
+											<li>
+												Consetetur sadipscing elitr sed
+											</li>
+											<li>
+												Diam eirmod tempor invidunt
+											</li>
+										</ul>
+										<div class="item-media">
+											<div class="owl-carousel gallery-blog gallery-owl-nav" data-nav="true" data-loop="true" data-autoplay="false" data-items="1" data-responsive-lg="3" data-responsive-md="2" data-responsive-sm="2" data-responsive-xs="1" data-margin="11">
+												{% for cat in category %}
+												<div>
+													<img src="{{ cat.image.url }}" alt="">
+												</div>
+												{% endfor %}
+											</div>
+											<!-- .owl-carousel -->
+										</div>
+									</div>
+									<div class="tags">
+										<span class="cat-tags-links">
+											<span class="tags-links">
+												<span>Tags:</span>
+												
+												{% for cat in category %}
+												<a href="#" rel="tag">{{ cat.title }}</a>,
+												{% endfor %}
+
+											</span>
+										</span>
+									</div>
+									<div class="share_buttons social_part">
+										<a href="https://www.facebook.com" class="color-bg-icon fa fa-facebook" target="_blank"></a>
+										<a href="https://twitter.com" class="color-bg-icon fa fa-twitter" target="_blank"></a>
+										<a href="https://plus.google.com" class="color-bg-icon fa fa-google-plus" target="_blank"></a>
+										<a href="https://instagram.com" class="color-bg-icon fa fa-instagram" target="_blank"></a>
+										<a href="https://www.youtube.com" class="color-bg-icon fa fa-youtube-play" target="_blank"></a>
+										<a href="https://www.dribbble.com" class="color-bg-icon fa fa-dribbble" target="_blank"></a>
+									</div>
+									<!-- eof .share_buttons -->
+									<div class="author-bio side-item content-padding">
+										<div class="row">
+											<div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
+												<div class="item-media covage">
+													<img src="{{ blog.author.image.url }}" alt="">
+												</div>
+											</div>
+
+											<div class="col-xl-8 col-lg-6 col-md-6 col-xs-12">
+												<div class="item-content">
+													<p class="small-text color-main">
+														{{ user.username }}
+													</p>
+													<h6>
+														<a href="#">
+															{{ blog.author.name }}
+														</a>
+													</h6>
+												
+													<div class="author-social fs-14">
+														<a href="#" class="fa fa-facebook color-icon"></a>
+														<a href="#" class="fa fa-twitter color-icon"></a>
+														<a href="#" class="fa fa-google-plus color-icon"></a>
+														<a href="#" class="fa fa-youtube-play color-icon"></a>
+														<a href="#" class="fa fa-linkedin color-icon"></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+
+							<div class="related-posts">
+								<h4>
+									Related Posts
+								</h4>
+								
+								<div class="row c-gutter-30">
+									{% for bl in blog_all %}
+									<div class="col-12 col-md-6">
+										<div class="vertical-item">
+											<div class="item-media">
+												<img src="images/gallery/03.jpg" alt="">
+											</div>
+											<div class="item-content">
+												<p>
+													<a href="#">{{ bl.title }}</a>
+													<p>{{ bl.desc|truncatewords:7 }}</p>
+												</p>
+											</div>
+											<p class="item-meta link-a">
+												<a href="#">{{ bl.create_add }}</a>
+											</p>
+										</div>
+									</div>
+									{% endfor %}
+								</div>
+								
+							</div>
+
+							<div id="comments" class="comments-area comment1">
+								<h4 class="comments-title">
+									Comments
+								</h4>
+								<ol class="comment-list">
+
+									{% for com in comm %}
+									<li class="comment ">
+										<!-- .comment-body -->
+										<ol class="children border-top">
+											<li class="comment">
+												<article class="comment-body">
+													<footer class="comment-meta">
+														<div class="comment-author vcard">
+															<img alt="" src="images/team/02.jpg">
+															<b class="fn">
+																<a href="#" rel="nofollow" class="url">{{ com.fullname }}</a>
+																<span class="dot">.</span>
+																<span class="data link-a">{{ com.create_add }}</span>
+															</b>
+															<div class="float-right">
+																<a href="#respond">
+																	<i class="color-darkgrey fa fa-mail-reply" aria-hidden="true"></i>
+																</a>
+															</div>
+														</div>
+														<!-- .comment-author -->
+
+													</footer>
+													<!-- .comment-meta -->
+
+													<div class="comment-content">
+														<p>
+															{{ com.comment }}
+														</p>
+													</div>
+													<!-- .comment-content -->
+												</article>
+												<!-- .comment-body -->
+											</li>
+											<!-- #comment-## -->
+										</ol>
+										<!-- .children -->
+									</li>
+									{% endfor %}
+								</ol>
+								<!-- .comment-list -->
+								<article class="comment-body comment-form">
+									<div class="comment-author vcard">
+										<img alt="" src="images/admin_icon.png">
+										<div id="respond" class=" comment-respond ms">
+											<form action="/" method="post" id="commentform" class="comment-form" novalidate="">
+												<div class="row c-gutter-20">
+													<div class="col-md-6">
+														<p class="comment-form-author ">
+															<input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required="required" class="form-control" placeholder="Full Name">
+														</p>
+													</div>
+													<div class="col-md-6">
+														<p class="comment-form-email">
+															<input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-required="true" required="required" placeholder="Email Adress" class="form-control">
+														</p>
+													</div>
+												</div>
+
+												<p class="comment-form-comment">
+													<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required" placeholder="Your comment" class="form-control"></textarea>
+												</p>
+												<div class="form-submit">
+													<input name="submit" type="submit" class="submit" value="Post A Comment">
+												</div>
+											</form>
+										</div>
+									</div>
+								</article>
+							</div>
+
+						</main>
+
+
+						<div class="d-none d-lg-block divider-85"></div>
+					</div>
+
+				</div>
+			</section>
+
+			{% include 'base/footer.html' %}
+
+
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+
+	{% endblock content %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from project.models import Services, Contact, Category, Rewiews, Plan
 from apps.aboutpage.models import AboutModels
+from apps.blogpage.models import Blog
 from django.views.generic import View
 
 
@@ -61,3 +62,9 @@ def contact(request):
     }
     return render(request, 'contact2.html', context)
 
+def blog(request):
+    blog = Blog.objects.all()
+    context = {
+        'blog': blog,
+    }
+    return render(request, 'blog-1.html', context)

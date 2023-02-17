@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     
     # apps
     'apps.aboutpage.apps.AboutpageConfig',
+    'apps.blogpage.apps.BlogpageConfig',
 ]
 
 MIDDLEWARE = [
