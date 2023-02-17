@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
-from project.views import homepage_index, about, services, work, contact, blog
+from project.views import homepage_index, about, services, work, contact, blog, ServicesDetailViews
 from apps.blogpage.views import BlogDetailViews
 
 urlpatterns = [
@@ -13,6 +13,7 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('blog/', blog, name='blog'),
     path('blog/<str:slug>/', BlogDetailViews.as_view(), name='blog_detail'),
+    path('services/<str:slug>/', ServicesDetailViews.as_view(), name='services_detail'),
     path('admin/', admin.site.urls),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

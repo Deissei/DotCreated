@@ -68,3 +68,11 @@ def blog(request):
         'blog': blog,
     }
     return render(request, 'blog-1.html', context)
+
+class ServicesDetailViews(View):
+    def get(self, request, slug):
+        serv = Services.objects.get(slug=slug)
+        context = {
+            'serv': serv
+        }
+        return render(request, 'service-single.html', context)

@@ -1,13 +1,21 @@
 from django.db import models
+from django.shortcuts import reverse
 
 class Services(models.Model):
     image = models.ImageField(verbose_name='Лого', upload_to='media/logo')
+    imagefull = models.ImageField(upload_to='media/services/image', null=True)
     title = models.CharField(max_length=30, verbose_name='Название Сервиса')
     description = models.TextField(max_length=50, verbose_name='Описание')
+    fulltext = models.TextField(max_length=14000, null=True)
+
     slug = models.SlugField(verbose_name='Ссылка')
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("services_detail", kwargs={"slug": self.slug})
+    
 
     class Meta:
         verbose_name_plural = 'Сервисы'

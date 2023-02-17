@@ -1,0 +1,117 @@
+{% extends 'base/base.html' %}
+
+	{% block content %}
+
+	<!-- Unyson messages modal -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+		<div class="fw-messages-wrap ls p-normal">
+		</div>
+	</div>
+	<!-- eof .modal -->
+
+
+	<!-- wrappers for visual page editor and boxed version of template -->
+	<div id="canvas">
+		<div id="box_wrapper">
+
+			{% include 'base/header.html' %}
+
+
+			<section class="page_title ls s-py-50 corner-title ls invise overflow-visible">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h1>Single Service</h1>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item">
+									<a href="{% url 'homepage' %}">Home</a>
+								</li>
+								<li class="breadcrumb-item">
+									<a href="#">Pages</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Single Service
+								</li>
+							</ol>
+							<div class="divider-15 d-none d-xl-block"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="ls s-pt-30 s-pb-50 s-pt-lg-50 s-pb-lg-100 c-mb-50 service-item4">
+				<div class="d-none d-lg-block divider-65"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 c-gutter-50 service-widget">
+
+							<h6>Other Services</h6>
+
+							<ul class="list">
+								<li>
+									<a href="services1.html">Business Apps</a>
+								</li>
+								<li>
+									<a href="services1.html">UI&UX Design</a>
+								</li>
+								<li>
+									<a href="services1.html">Mobile Apps</a>
+								</li>
+								<li>
+									<a href="services1.html">Database Development</a>
+								</li>
+								<li>
+									<a href="services1.html">Branding</a>
+								</li>
+								<li>
+									<a href="services1.html">Ecommerce</a>
+								</li>
+								<li>
+									<a href="services1.html">Online Marketing</a>
+								</li>
+								<li>
+									<a href="services1.html">Print Design</a>
+								</li>
+								<li>
+									<a href="services1.html">Website Design</a>
+								</li>
+								<li>
+									<a href="services1.html">Corporate Identity</a>
+								</li>
+								<li>
+									<a href="services1.html">SMM</a>
+								</li>
+								<li>
+									<a href="services1.html">SEO</a>
+								</li>
+								<li>
+									<a href="services1.html">Case Studios</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-8 ">
+							<img src="{{ serv.imagefull.url }}" alt="">
+							<div class="icon-box hero-bg single">
+								<p class="excerpt">
+									{{ serv.title }}
+								</p>
+								<p>
+									{{ serv.fulltext }}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="d-none d-lg-block divider-50"></div>
+			</section>
+
+			{% include 'base/footer.html' %}
+
+
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+
+	{% endblock content %}
